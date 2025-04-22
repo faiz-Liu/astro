@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import img from '../assets/skm.jpg'
-import {Image} from 'astro:assets';
+import {Image, Picture} from 'astro:assets';
 ---
 
 <Layout>
-    <!--<Image src={img} alt="Astro Logo"/>-->
+    <div class="flex flex-col items-center justify-center">
+        <Image src={img} alt="Astro Logo" widths={[300, 600]} sizes="(max-width: 600px) 100vw, 600px"/>
+        <Picture src={img} formats={['avif', 'webp']} alt="我的图片描述"/>
+    </div>
 </Layout>
 
